@@ -1,0 +1,45 @@
+thead{
+    background-color: #ebebeb;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+}
+th{
+    padding: 10px 15px;
+    font-size: 12px;
+    color: gray;
+}
+.table-data{
+    border: aliceblue;
+}
+td{
+    padding: 20px 15px;
+
+    font-size: 11px;
+    text-align: left;
+    font-weight: 500;
+    font-style: normal;
+}
+header {
+    margin-bottom: 15px;
+    }
+.pagination-allignment{
+    padding-top: 90px;
+    font-weight: 600;
+}
+.table-data:hover{
+background-color: #ebebeb;
+cursor: pointer;
+}
+iframe{
+    width: 20px;
+    height: 20px;
+}
+agm-map {
+    height: 300px;
+  }
+  @media screen and (max-width : 768px) {
+    header {
+    margin-left: 47px;
+    margin-bottom: 15px;
+    }
+}

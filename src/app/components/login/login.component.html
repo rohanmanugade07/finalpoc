@@ -1,0 +1,45 @@
+<section class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+    <label for="yms" id="yms">YMS</label>
+    <div class="mb-3">
+      <input
+        type="email"
+        id="btnUsername"
+        class="form-control"
+        name="email"
+        formControlName="email"
+        placeholder="Username"
+      />
+      <p *ngIf="formGroup.controls['email'].errors && formGroup.controls['email'].touched" class="text-danger"> email id is
+        required </p>
+    </div>
+    <div class="mb-3">
+      <input
+        type="password"
+        id="btnPassword"
+        class="form-control"
+        name="password"
+        formControlName="password"
+        placeholder="password"
+      />
+      <p *ngIf="formGroup.controls['password'].errors && formGroup.controls['password'].touched" class="text-danger">password
+        is required</p>
+    </div>
+    <div class="mb-3">
+      <p *ngIf="showError" style="color:red;">Invalid emailId or password</p>
+      <button type="submit" [disabled]="!formGroup.valid" id="btnSubmit">Login</button>
+      <button type="button" id="btnCancel" (click)="cancel()">Cancel</button>
+    </div>
+    <label for="or" id="or">OR</label>
+    <div class="mt-3">
+      <button type="button" id="btnFacebook" (click)="loginWithFacebook()">
+        Login with Facebook</button
+      ><br />
+      <br />
+      <button type="button" id="btnGoggle" (click)="loginWithGoggle()">
+        Login with Goggle
+      </button>
+    </div>
+  </form>
+</section>
+

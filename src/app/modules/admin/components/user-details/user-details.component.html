@@ -1,0 +1,39 @@
+  <section>
+      <header>User Details</header>
+      <div>
+        <div class=" card-allignment">
+          <div class="">
+            <img src="{{userData?.avatar}}" alt="" />
+          </div>
+          <aside>
+            <div class="lable-align">
+              <label for="inputPassword" class="col-sm-2 col-form-label"
+                >First Name</label
+              >
+              <p>{{ userData?.first_name }}</p>
+            </div>
+
+            <div class="lable-align">
+              <label for="inputPassword" class="col-sm-2 col-form-label"
+                >Last Name</label
+              >
+              <p>{{ userData?.last_name }}</p>
+            </div>
+
+            <div class="lable-align">
+              <label for="inputPassword" class="col-sm-2 col-form-label"
+                >Email</label
+              >
+              <p>{{ userData?.email }}</p>
+            </div>
+              
+          </aside>
+          
+        </div>
+        <button class="btn btn-primary" routerLink="/admin/user-manager" type="button">
+          Back
+        </button>
+      </div>
+     
+  </section>
+<router-outlet></router-outlet>

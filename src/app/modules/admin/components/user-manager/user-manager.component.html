@@ -1,0 +1,60 @@
+<!-- <p-dialog header="Title" [(visible)]="display"> Content</p-dialog> -->
+
+<section>
+  <header>User Manager</header>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Userneme</th>
+          <th>Email</th>
+          <th>city</th>
+          <th>zipcode</th>
+          <!-- <th>location</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table-data"
+          *ngFor="
+            let user of userList
+              | paginate
+                : {
+                    itemsPerPage: 4,
+                    currentPage: page,
+                    totalItems: totalLength
+                  }
+          "
+          [routerLink]="['/admin/user-details',user?.id]"
+          >
+          <!-- [routerLink]="['/admin/product-detail',user.id]" -->
+          
+          <td> {{ user?.id }}</td>
+          <td >{{ user?.name }}</td>
+          <td >{{ user?.username }}</td>
+          <td >{{ user?.email }}</td>
+          <td >{{ user?.address?.city }}</td>
+          <td >{{ user?.address?.zipcode }}</td>
+          <!-- <td><a (click)="user?.id(this)">click</a></td> -->
+          
+          <!-- <td >{{ user?.address?.geo?.lat }}   {{ user?.address?.geo?.lng }}</td>   -->
+          <!-- <td >click me</td> -->
+        
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <div>
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-map-marker [latitude]="lat" [longitude]="lng"></agm-map-marker>
+        </agm-map>
+    </div> -->
+    <!-- <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button> -->
+  </div>
+  <div class="pagination-allignment">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</section>
+

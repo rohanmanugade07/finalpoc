@@ -1,0 +1,84 @@
+input.ng-touched.ng-invalid.ng-pristine {
+
+  border: 1px solid red;
+
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #e3e9ef;
+  width: 400px;
+  height: auto;
+  border-radius: 25px;
+  margin-top: 150px;
+  border: 1px solid #b3b8bd;
+}
+
+#yms {
+  background-color: lightskyblue;
+  border-radius: 20px;
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+input {
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+#btnSubmit {
+  background-color: #508ff4;
+  border-radius: 6px;
+  border: 1px solid #508ff4;
+  font-size: 15px;
+  /* padding: 5px 10px; */
+}
+
+#btnCancel {
+  margin-left: 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #b3b8bd;
+  border: 1px solid #b3b8bd;
+}
+
+#or {
+  color: #89645f;
+  font-size: 10px;
+}
+
+#btnFacebook {
+  background-color: #f0faf5;
+  color: #5395f4;
+  border: 1px solid #5395f4;
+  border-radius: 10px;
+  width: 160px;
+  padding: 5px;
+  font-size: 13px;
+}
+
+#btnGoggle {
+  background-color: #f0faf5;
+  color: #e97c7e;
+  border-radius: 10px;
+  width: 160px;
+  border: 1px solid #e97c7e;
+  padding: 5px;
+  font-size: 13px;
+}
+
+/* button:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+} */

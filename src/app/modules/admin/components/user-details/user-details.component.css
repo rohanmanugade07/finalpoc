@@ -1,0 +1,99 @@
+
+header {
+  font-size: 15px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+  padding: 0px 5px 5px 0px;
+  margin-bottom: 20px;
+}
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+
+.lable-align {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+label {
+  width: 113px;
+  padding: 10px;
+  padding-right: 10px;
+  margin-right: 0px;
+  color: gray;
+  text-align: left;
+}
+.form-group {
+  display: flex;
+  flex-direction: row;
+}
+.card-allignment {
+  display: flex;
+}
+aside {
+  justify-content: space-between;
+}
+section{
+  position: relative;
+  padding: 25px;
+}
+button {
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+ 
+}
+p {
+  width: 250px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  background-color: #dbdbdb;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1050px) {
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .card-allignment {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  p {
+    width: 200px;
+  }
+  button{
+    position: relative;
+    bottom: auto;
+    left: auto;
+  }
+}
+@media screen and (max-width: 850px) {
+  .lable-align {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  p {
+    width: 180px;
+  }
+  
+}
+@media screen and (max-width : 768px) {
+  header {
+  padding-left: 47px;
+  margin-bottom: 15px;
+  }
+}

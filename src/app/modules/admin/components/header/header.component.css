@@ -1,0 +1,37 @@
+.form-control {
+    border-radius: 6px;
+    width: 200px;
+    margin-left: 30px;
+    /* padding: 5px;
+    padding-left: 5px; */
+    font-size: 11px;
+}
+.serch-icon {
+    position: absolute;
+    z-index: 999;
+    /* right: 0px; */
+    left: 336px;
+    top: 23px;
+    color: blue;
+    font-size: 11px;
+}
+@media screen and (max-width: 360px) {
+    .form-control {
+        width: 4rem;
+        margin-left: 15px;
+        font-size: 11px;
+    }
+    .serch-icon {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-control {
+        width: 4rem;
+        margin-left: 15px;
+        font-size: 11px;
+    }
+    .serch-icon {
+        display: none;
+    }
+}

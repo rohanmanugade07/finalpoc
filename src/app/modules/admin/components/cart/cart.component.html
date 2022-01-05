@@ -1,0 +1,102 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="container-fluid">
+    <app-header></app-header>
+    <section>
+      <div class="card-table">
+        <div class="cart-product table-responsive">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of products; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <img style="width: 85px" src="{{ item.image }}" alt="" />
+                </td>
+                <td style="width: 22%">{{ item.title }}</td>
+                <td style="width: 45%; overflow: hidden; height: 40px">
+                  {{ item.description }}
+                </td>
+                <td style="width: 15%">
+                  ${{ item?.price - item?.price / 10 | number: "1.2-2" }}
+                </td>
+                <td style="width: 5%">{{ item.quantity }}</td>
+                <td style="width: 5%">
+                  ${{ item?.price - item?.price / 10 | number: "1.2-2" }}
+                </td>
+                <td>
+                  <button (click)="removeItem(item)" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <tr style="margin-top: 15px; padding: 20px;">
+            
+            <td style="font-size: 10px">
+              <button (click)="emptycart()" class="btn btn-danger">
+                Empty Cart
+              </button>
+            </td>
+            <td style="font-size: 10px">
+              <button routerLink="/admin/product" class="btn btn-primary">
+                Shop More
+              </button>
+            </td>
+            <td style="width: 45px">
+              <button
+                class="btn btn-success"
+                (click)="pay(grandTotal - grandTotal / 10)"
+              >
+                Checkout
+              </button>
+            </td>
+            <td><strong style="width: 70px">Grand Total: </strong></td>
+            <td>
+              <strong
+                >${{
+                  grandTotal - grandTotal / 10 | number: "1.2-2"
+                }}</strong
+              >
+            </td>
+          </tr>
+        </div>
+      </div>
+    </section>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container-fluid">
+    <app-header></app-header>
+    <section>
+      <div class="center">
+        <img
+          src="../../../../../assets/pngfind.com-cart-png-2727925.png"
+          alt=""
+        />
+        <h5>Your cart is empty</h5>
+        <h6>Add item to it now</h6>
+        <button
+          routerLink="/admin/product"
+          style="font-size: 15px; margin-top: 5px"
+          class="btn btn-primary"
+        >
+          Shop Now
+        </button>
+      </div>
+    </section>
+  </div>
+</ng-container>

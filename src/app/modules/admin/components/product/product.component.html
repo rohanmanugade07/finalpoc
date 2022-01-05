@@ -1,0 +1,137 @@
+<div class="container-fluid">
+  <app-header></app-header>
+
+  <section>
+    <div class="d-flex">
+      <div class="item">
+        <a (click)="filter('')">
+          <img
+            src="../../../../../assets/pexels-sora-shimazaki-5926445.jpg"
+            alt=""
+          />
+          <h6>All products</h6>
+        </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('fashion')">
+          <img
+            src="../../../../../assets/pngfind.com-fashion-png-975912.png"
+            alt=""
+          />
+          <h6>Fashion</h6>
+        </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('electronics')">
+          <img
+            src="../../../../../assets/pngfind.com-electronics-items-png-891691.png"
+            alt=""
+          />
+          <h6>Electronics</h6>
+        </a>
+      </div>
+
+      <div class="item">
+        <a (click)="filter('jewelery')">
+          <img
+            src="../../../../../assets/pngfind.com-imitation-jewellery-png-1631822 (1).png"
+            alt=""
+          />
+          <h6>Jewelery</h6>
+        </a>
+      </div>
+    </div>
+    <header class="product-header">
+      <label class="list">List Product</label>
+      <div class="col-md-offset-11">
+        <p style="float: right; margin-top: -20px" class="itemsPage">
+          Show items per page
+          <select id="PerPage" [(ngModel)]="pageSize">
+            <option [ngValue]="4">4</option>
+            <option [ngValue]="6">6</option>
+            <option [ngValue]="8">8</option>
+            <option [ngValue]="10">10</option>
+          </select>
+        </p>
+      </div>
+    </header>
+
+    <div class="row col-md-12 col-sm-12">
+      <div
+        class="inner-container"
+        *ngFor="
+          let item of filterCategory
+            | filter: searchKey:'title'
+            | paginate
+              : {
+                  itemsPerPage: pageSize,
+                  currentPage: page,
+                  totalItems: totalLength
+                }
+        "
+      >
+        <div class="card card-flex col-md-12 col-sm-12">
+          <img
+            src="{{ item?.image }}"
+            alt="Card image cap"
+            [routerLink]="['/admin/product-detail', item.id]"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ item?.category }}</h5>
+            <h6
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                max-width: 170px;
+                text-overflow: ellipsis;
+              "
+            >
+              {{ item?.title }}
+            </h6>
+            <p class="card-text">{{ item?.description }}</p>
+            <label for=""
+              >$ {{ item?.price - item?.price / 10 | number: "1.2-2" }}</label
+            >
+            <span>$ {{ item?.price }}</span> <br />
+            <div
+              class="starrating row"
+              style="display: inline"
+              style="display: inline"
+              *ngFor="let num of createFn(item?.rating?.rate)"
+            >
+              <div class="img-allignment" style="display: inline">
+                <img
+                  *ngIf="num == 1"
+                  src="../../../../../assets/full-start.png"
+                />
+                <img
+                  *ngIf="num == 0"
+                  src="../../../../../assets/empty-star.png"
+                />
+                <img
+                  *ngIf="num == 0.5"
+                  src="../../../../../assets/half-star.png"
+                />
+              </div>
+            </div>
+            {{ item?.rating?.rate }}
+            <div>
+              <button
+                style="font-size: 10px; margin-top: 5px"
+                class="btn btn-primary"
+                (click)="addtoCart(item)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-allignment">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </section>
+</div>
+
+<router-outlet></router-outlet>

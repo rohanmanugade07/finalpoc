@@ -1,0 +1,156 @@
+.nav1 {
+    /* width: 300px; */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 20px;
+    box-shadow: 0px 0px 4px 2px lightsteelblue;
+}
+.navHeader {
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+img {
+    width: 30px;
+}
+span {
+    padding-left: 17px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navbar {
+    text-align: left;
+    background: white;
+    
+}
+ul{
+    padding-left: 0;
+}
+
+li {
+    padding: 10px 0px;
+    list-style: none;
+    /* width: 260px; */
+    font-size: 13px;
+    cursor: pointer;
+}
+li i {
+    padding: 5px 20px;
+    padding-right: 20px;
+    width: 40px;
+}
+nav li a {
+    color: gray;
+    text-decoration: none;
+}
+nav li:last-child {
+    margin-top: 50px;
+}
+
+nav li:last-child {
+    border-top: 1px solid gray;
+}
+
+.navbar li:hover {
+    background-color: #c6e4fb;
+    border-radius: 20px;
+}
+.navbar a:hover {
+    color: #0247fe;
+}
+.active {
+    color: blue;
+}
+
+
+/* ============================== */
+
+.nav2 {
+    display: none;
+    width: 170px;
+    background-color: none;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-color: black;
+
+}
+.navbar-toggler{
+    border: none;
+    padding: 0px;
+   
+}
+.navbar-toggler:hover{
+    background-color: steelblue;
+    border: none;
+    border-style: none;
+}
+/* @media screen and (max-width: 800px) { */
+
+    @media screen and (max-width : 812px) {
+        .nav1{
+            width: 230px;
+        }
+        .navbar ul{
+            margin: 0;
+            padding: 0;
+        }
+       .navbar ul li{
+            width: auto;
+            display: block;
+        }
+    }
+    @media screen and (max-width : 768px) {
+    .nav1 {
+        display: none;
+    }
+    .nav2 {
+        display: block;
+        /* width: fit-content; */
+        z-index: 999;
+        /* box-sizing: border-box; */
+        padding: 0;
+        margin-left: 20px;
+        position: absolute;
+        top: 40px;
+        left: 53px;
+        width: 25px;
+        background: none;
+       
+    }
+    .navbar-light .navbar-toggler-icon{
+         background-color: #2199e8;  
+          
+    }
+    .navbar {
+        text-align: left;
+        /* background: #2199e8; */
+        background: lightskyblue;
+        width: auto;
+       
+    }
+   .navbar ul{
+    position: absolute;
+    top: 38px;
+        width: 170px;
+    }
+    .navHeader {
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+        width: 109px;
+    }
+    li {
+        width: 150px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .nav2 {
+        width: 10px;
+    height: 10px;
+    top: 40px;
+    /* right: 79px; */
+    border-style: none;
+    padding: 0px;
+    
+    }
+   
+    
+}

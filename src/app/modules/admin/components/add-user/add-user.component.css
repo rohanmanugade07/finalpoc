@@ -1,0 +1,57 @@
+form {
+  margin-top: 30px;
+}
+header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+input {
+  width: 45%;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  background-color: rgb(223, 232, 235);
+}
+.btnAllign {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-top: 10px;
+}
+button {
+  width: 100px;
+  padding: 10px;
+  font-size: 0.8em;
+  border-radius: 9px;
+  border: 0px;
+  color: white;
+}
+.btncancel {
+  visibility: hidden;
+}
+
+.addUser {
+  background-color: #448aff;
+  margin-right: 10px;
+}
+.showErr {
+  color: red;
+  padding-bottom: 20px;
+}
+.reset {
+  background-color: #9e9e9e;
+}
+
+@media screen and (max-width: 550px) {
+  input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding-left: 47px;
+    margin-bottom: 15px;
+  }
+}
