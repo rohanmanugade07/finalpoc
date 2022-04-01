@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   public totalItem: number= 0;
   public searchTerm !: string;
-  constructor(private cartservice:CartService ) { }
+  constructor(public cartservice:CartService ) { }
 
   ngOnInit(): void {
     this.cartservice.getProducts()

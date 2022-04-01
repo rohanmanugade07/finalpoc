@@ -17,16 +17,15 @@ export class UserManagerComponent implements OnInit {
   lng:number = 7.809007;
 
   constructor( private uerListService: UerListService) { 
+  }
 
+  ngOnInit(): void {
     this.uerListService.getUserList().subscribe(data =>{
       this.userList = data;
       this. totalLength=this.userList.length;
       console.log(data)
 
-    });
-  }
-
-  ngOnInit(): void {
+    }); 
   } 
 
   showDialog() {

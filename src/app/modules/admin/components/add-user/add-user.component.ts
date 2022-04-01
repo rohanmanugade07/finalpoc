@@ -14,7 +14,8 @@ export class AddUserComponent implements OnInit {
   public show: boolean = true;
   router: any;
   showError: boolean = false;
-  constructor(private userListService: UerListService) {}
+  constructor(public userListService: UerListService) {}
+  
   initForm() {
     this.formGroup = new FormGroup({
       email: new FormControl('', [Validators.required]),
@@ -22,6 +23,7 @@ export class AddUserComponent implements OnInit {
     });
   }
   userLogin() {
+    debugger;
     if (this.formGroup.valid || this.show) {
       const body = this.formGroup.value;
       this.userListService.addUser('/register', body).subscribe(
